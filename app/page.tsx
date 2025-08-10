@@ -85,69 +85,8 @@ export default function Page() {
       </div>
 
       <div className="pb-[100px] max-w-[1500px] mx-auto ">
-        <section className="relative pt-[190px] pb-[112px]">
-          <div className="md:grid md:grid-cols-2 md:gap-8 w-full items-center mx-auto ">
-            <div className="flex text-white gap-1">
-              <h1 className="[writing-mode:vertical-rl] rotate-180 text-xl text-button-primary-background italic flex">
-                Instinct---
-                <p className="text-white">Released May 22, 2023</p>
-              </h1>
-              <Image
-                src={monsterCat}
-                alt="Monstercat Release Cover"
-                className="w-full h-auto max-w-[680px] object-cover"
-              />
-            </div>
-            <div className="text-white text-5xl font-bold">
-              <h1 className="mb-[16px] text-transparent [-webkit-text-stroke-color:white] [-webkit-text-stroke-width:1px]">
-                LEVEL DAYS
-              </h1>
-              <h2 className={`text-3xl mb-[32px] `}>CONRO</h2>
-              <Button
-                variant="primary"
-                size="button"
-                className="text-xl text-white"
-              >
-                <Play className="size-5" />
-                Listen Now
-              </Button>
-              <Button
-                variant="secondary"
-                size="buttonSecondary"
-                className="text-xl text-white ml-3 "
-              >
-                <Share2 className="size-5" />
-                Share
-              </Button>
-            </div>
-          </div>
-        </section>
-        <section className=" relative max-w-[1500px]">
-          <div className="mx-auto ">
-            <h1 className="md:text-5xl text-white mb-10 font-bold">
-              STREAM IT IN YOUR WAY
-            </h1>
-            <ul className="text-white flex mb-20">
-              <li className=" flex gap-2 items-center border border-white p-4">
-                <Compass className="size-6 text-white" />
-                <p className="font-bold">Player</p>
-              </li>
-              <li className="border border-white p-6 ">
-                <Compass className="size-6 text-white" />
-              </li>
-              <li className="border border-white p-6 ">
-                <Cloud className="size-6 text-white" />
-              </li>
-              <li className="border border-white p-6 ">
-                <Apple className="size-6 text-white" />
-              </li>
-              <li className="border border-white p-6 ">
-                <Youtube className="size-6 text-white" />
-              </li>
-            </ul>
-            <h1 className="text-4xl text-white">Track List</h1>
-          </div>
-        </section>
+        <Hero />
+        <Player />
 
         <section>
           <div className="mx-auto ">
@@ -210,4 +149,77 @@ function formatTrackLength(duration: number): string {
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
   return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+}
+
+function Hero() {
+  return (
+    <section className="relative pt-[190px] pb-[112px]">
+      <div className="md:grid md:grid-cols-2 md:gap-8 w-full items-center mx-auto ">
+        <div className="flex text-white gap-1">
+          <h1 className="[writing-mode:vertical-rl] rotate-180 text-xl text-button-primary-background italic flex">
+            Instinct---
+            <p className="text-white">Released May 22, 2023</p>
+          </h1>
+          <Image
+            src={monsterCat}
+            alt="Monstercat Release Cover"
+            className="w-full h-auto max-w-[680px] object-cover"
+          />
+        </div>
+        <div className="text-white text-5xl font-bold">
+          <h1 className="mb-[16px] text-transparent [-webkit-text-stroke-color:white] [-webkit-text-stroke-width:1px]">
+            LEVEL DAYS
+          </h1>
+          <h2 className={`text-3xl mb-[32px] `}>CONRO</h2>
+          <Button
+            variant="primary"
+            size="button"
+            className="text-xl text-white"
+          >
+            <Play className="size-5" />
+            Listen Now
+          </Button>
+          <Button
+            variant="secondary"
+            size="buttonSecondary"
+            className="text-xl text-white ml-3 "
+          >
+            <Share2 className="size-5" />
+            Share
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Player() {
+  return (
+    <section className=" relative max-w-[1500px]">
+      <div className="mx-auto ">
+        <h1 className="md:text-5xl text-white mb-10 font-bold">
+          STREAM IT IN YOUR WAY
+        </h1>
+        <ul className="text-white flex mb-20">
+          <li className=" flex gap-2 items-center border border-white p-4">
+            <Compass className="size-6 text-white" />
+            <p className="font-bold">Player</p>
+          </li>
+          <li className="border border-white p-6 ">
+            <Compass className="size-6 text-white" />
+          </li>
+          <li className="border border-white p-6 ">
+            <Cloud className="size-6 text-white" />
+          </li>
+          <li className="border border-white p-6 ">
+            <Apple className="size-6 text-white" />
+          </li>
+          <li className="border border-white p-6 ">
+            <Youtube className="size-6 text-white" />
+          </li>
+        </ul>
+        <h1 className="text-4xl text-white">Track List</h1>
+      </div>
+    </section>
+  );
 }
